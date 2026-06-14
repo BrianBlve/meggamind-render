@@ -63,6 +63,7 @@ export const RemotionRoot: React.FC = () => {
         defaultProps={{ formato: "youtube", captions: DEMO_CAPTIONS } as SubtitulosProps}
         calculateMetadata={calcSubs}
       />
+      {/* Máster 4K (pedido de Brian). Los textos escalan con la altura (k = height/1080). */}
       <Composition
         id="Vlog"
         component={Vlog}
