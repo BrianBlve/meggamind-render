@@ -25,11 +25,12 @@
   },
   "timeline": [
     {
-      "tipo": "title_card",
+      "tipo": "trailer",
+      "dur": 15.5,
       "clips": [
         {
-          "clip": "broll/titlecard.mp4",
-          "dur": 5.5
+          "clip": "trailer_standalone.mp4",
+          "dur": 15.5
         }
       ]
     },
@@ -234,5 +235,5 @@
       "whoosh": true
     }
   ],
-  "audio": "audio_mezcla.m4a"
+  "audio": "audio_full.m4a"
 }

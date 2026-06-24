@@ -66,9 +66,15 @@ jobs:
         with: { pattern: "seg-*", path: parts, merge-multiple: true }
       - run: |
           ls -la parts/
-          for f in $(ls parts/seg_*.mp4 | sort); do echo "file '$PWD/$f'" >> list.txt; done
-          cat list.txt
-          ffmpeg -y -f concat -safe 0 -i list.txt -c:v copy -c:a aac -b:a 320k -movflags +faststart VLOG_CHINA_4K.mp4
+          # Remux cada tramo a MPEG-TS y concatena por el protocolo concat: el demuxer concat con
+          # -c:v copy perdía ~frames en los bordes (timestamps/orden). TS no pierde frames.
+          TS=""
+          for f in $(ls parts/seg_*.mp4 | sort); do
+            ffmpeg -y -i "$f" -c copy -bsf:v h264_mp4toannexb -f mpegts "${f%.mp4}.ts"
+            TS="${TS}${TS:+|}${f%.mp4}.ts"
+          done
+          echo "TS=$TS"
+          ffmpeg -y -i "concat:$TS" -c:v copy -c:a aac -b:a 320k -movflags +faststart VLOG_CHINA_4K.mp4
           ffmpeg -hide_banner -i VLOG_CHINA_4K.mp4 2>&1 | grep -E "Duration|Video:|Audio:" || true
       - uses: actions/upload-artifact@v4
         with: { name: vlog-4k, path: VLOG_CHINA_4K.mp4, retention-days: 5 }
