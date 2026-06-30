@@ -21,6 +21,8 @@ const fuenteUrl = (plan: RenderPlan, clave: string) => {
   return staticFile(`china/${plan.modo === "proxy" ? f.proxy : f.full}`);
 };
 const brollUrl = (f: string) => staticFile(`china/${f}`);
+const corteUrl = (plan: RenderPlan, src: string) =>
+  plan.modo === "proxy" ? staticFile(`china/proxy/${src.replace(/\.MOV$/i, ".mp4")}`) : staticFile(`china/${src}`);
 
 // ============ COLOR POR ESCENA (Bloque E, regla del 70%) ============
 const FILTRO: Record<string, string> = {
@@ -316,7 +318,13 @@ const BloqueAV: React.FC<{ plan: RenderPlan; b: Bloque; caps: Cap[]; durF: numbe
       {!sg && (
         <Grade preset={grade} liviano={plan.modo === "proxy"}>
           <ConZoom zoom={b.zoom} durF={durF}>
-            <OffthreadVideo src={fuenteUrl(plan, b.fuente ?? "vlog")} trimBefore={Math.round((b.from ?? 0) * fps)} toneMapped={false} muted={!!plan.audio} />
+            {b.cortes ? b.cortes.map((c, i) => (
+              <Sequence key={`co${i}`} from={Math.round(c.at * fps)} durationInFrames={Math.round(c.dur * fps)}>
+                <OffthreadVideo src={corteUrl(plan, c.src)} trimBefore={Math.round(c.in * fps)} toneMapped={false} muted />
+              </Sequence>
+            )) : (
+              <OffthreadVideo src={fuenteUrl(plan, b.fuente ?? "vlog")} trimBefore={Math.round((b.from ?? 0) * fps)} toneMapped={false} muted={!!plan.audio} />
+            )}
           </ConZoom>
         </Grade>
       )}

@@ -46,6 +46,7 @@ export type Bloque = {
   bloopers?: Rango[];       // rangos a SALTAR dentro del bloque (B1), relativos al bloque
   zoom?: Zoom[];            // zooms del bloque (relativos al bloque)
   broll?: Broll[];          // cutaways (relativos al bloque)
+  cortes?: { src: string; at: number; in: number; dur: number }[]; // edicion nativa por cortes
   lowerThirds?: LowerThird[];
   chips?: Chip[];
   vertical?: Vertical[];

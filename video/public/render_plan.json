@@ -1,239 +1,631 @@
 {
-  "fps": 60,
-  "modo": "4k",
-  "fuentes": {
-    "vlog": {
-      "full": "vlog_nitido.mp4",
-      "proxy": "vlog_proxy.mp4"
-    },
-    "trading": {
-      "full": "trading_nitido.mp4",
-      "proxy": "trading_proxy.mp4"
-    },
-    "vlog_b": {
-      "full": "vlog_nitido_b.mp4",
-      "proxy": "vlog_proxy_b.mp4"
-    },
-    "vlog_m": {
-      "full": "vlog_nitido_cap1.mp4",
-      "proxy": "vlog_proxy_cap1.mp4"
-    },
-    "vlog_final": {
-      "full": "vlog_nitido_final.mp4",
-      "proxy": "vlog_proxy_final.mp4"
-    }
+ "fps": 60,
+ "modo": "4k",
+ "fuentes": {
+  "vlog": {
+   "full": "vlog_nitido.mp4",
+   "proxy": "vlog_proxy.mp4"
   },
-  "timeline": [
+  "trading": {
+   "full": "trading_nitido.mp4",
+   "proxy": "trading_proxy.mp4"
+  },
+  "vlog_b": {
+   "full": "vlog_nitido_b.mp4",
+   "proxy": "vlog_proxy_b.mp4"
+  },
+  "vlog_m": {
+   "full": "vlog_nitido_cap1.mp4",
+   "proxy": "vlog_proxy_cap1.mp4"
+  },
+  "vlog_final": {
+   "full": "vlog_nitido_final.mp4",
+   "proxy": "vlog_proxy_final.mp4"
+  }
+ },
+ "timeline": [
+  {
+   "tipo": "trailer",
+   "dur": 15.5,
+   "clips": [
     {
-      "tipo": "trailer",
-      "dur": 15.5,
-      "clips": [
-        {
-          "clip": "trailer_standalone.mp4",
-          "dur": 15.5
-        }
-      ]
-    },
-    {
-      "tipo": "habla",
-      "fuente": "vlog_final",
-      "from": 0,
-      "dur": 770.22,
-      "grade": "C1",
-      "zoom": [
-        {
-          "tipo": "panzoom",
-          "from": 274,
-          "to": 289,
-          "de": 1.18,
-          "a": 1.5,
-          "origenX": 0.52,
-          "origenY": 0.42
-        },
-        {
-          "tipo": "panzoom",
-          "from": 487,
-          "to": 508,
-          "de": 1.18,
-          "a": 1.48,
-          "origenX": 0.5,
-          "origenY": 0.45
-        },
-        {
-          "tipo": "panzoom",
-          "from": 698,
-          "to": 706,
-          "de": 1.2,
-          "a": 1.5,
-          "origenX": 0.58,
-          "origenY": 0.5
-        },
-        {
-          "tipo": "punch",
-          "from": 66.4,
-          "to": 71.5,
-          "magnitud": 1.2
-        },
-        {
-          "tipo": "punch",
-          "from": 323.3,
-          "to": 331.0,
-          "magnitud": 1.18
-        },
-        {
-          "tipo": "punch",
-          "from": 352.4,
-          "to": 358.0,
-          "magnitud": 1.17
-        },
-        {
-          "tipo": "punch",
-          "from": 541.0,
-          "to": 548.0,
-          "magnitud": 1.18
-        },
-        {
-          "tipo": "punch",
-          "from": 575.6,
-          "to": 580.1,
-          "magnitud": 1.2
-        },
-        {
-          "tipo": "punch",
-          "from": 665.1,
-          "to": 669.1,
-          "magnitud": 1.22
-        },
-        {
-          "tipo": "punch",
-          "from": 674.7,
-          "to": 679.8,
-          "magnitud": 1.24
-        },
-        {
-          "tipo": "enfasis",
-          "from": 682.9,
-          "to": 691.5,
-          "magnitud": 1.16
-        },
-        {
-          "tipo": "enfasis",
-          "from": 730.5,
-          "to": 736.1,
-          "magnitud": 1.17
-        },
-        {
-          "tipo": "enfasis",
-          "from": 737.7,
-          "to": 745.7,
-          "magnitud": 1.2
-        },
-        {
-          "tipo": "enfasis",
-          "from": 752.4,
-          "to": 760.5,
-          "magnitud": 1.18
-        }
-      ],
-      "broll": [],
-      "vertical": [],
-      "lowerThirds": [
-        {
-          "titulo": "Huanglong National Park",
-          "sub": "Sichuan · China",
-          "at": 133.0,
-          "dur": 4.5
-        }
-      ],
-      "chips": [
-        {
-          "label": "Target",
-          "valor": "$1,000",
-          "at": 277.0,
-          "dur": 5.5,
-          "x": 0.06,
-          "y": 0.09
-        },
-        {
-          "label": "Resultado",
-          "valor": "+$500",
-          "at": 699.0,
-          "dur": 6.0,
-          "x": 0.05,
-          "y": 0.14,
-          "verde": true
-        }
-      ]
+     "clip": "trailer_standalone.mp4",
+     "dur": 15.5
     }
-  ],
-  "musica": [],
-  "sfx": [],
-  "transiciones": [
+   ]
+  },
+  {
+   "tipo": "habla",
+   "fuente": "vlog_final",
+   "from": 0,
+   "dur": 770.22,
+   "grade": "C1",
+   "zoom": [
     {
-      "tipo": "whip",
-      "at": 45.25,
-      "whoosh": true
+     "tipo": "panzoom",
+     "from": 274,
+     "to": 289,
+     "de": 1.18,
+     "a": 1.5,
+     "origenX": 0.52,
+     "origenY": 0.42
     },
     {
-      "tipo": "impacto",
-      "at": 107.7,
-      "fuerza": "fuerte",
-      "whoosh": true
+     "tipo": "panzoom",
+     "from": 487,
+     "to": 508,
+     "de": 1.18,
+     "a": 1.48,
+     "origenX": 0.5,
+     "origenY": 0.45
     },
     {
-      "tipo": "whip",
-      "at": 121.5,
-      "whoosh": true
+     "tipo": "panzoom",
+     "from": 698,
+     "to": 706,
+     "de": 1.2,
+     "a": 1.5,
+     "origenX": 0.58,
+     "origenY": 0.5
     },
     {
-      "tipo": "impacto",
-      "at": 270.58,
-      "fuerza": "fuerte",
-      "whoosh": true
+     "tipo": "punch",
+     "from": 66.4,
+     "to": 71.5,
+     "magnitud": 1.2
     },
     {
-      "tipo": "whip",
-      "at": 314.6,
-      "whoosh": true
+     "tipo": "punch",
+     "from": 323.3,
+     "to": 331.0,
+     "magnitud": 1.18
     },
     {
-      "tipo": "dip_black",
-      "at": 388.7,
-      "dur": 1.1
+     "tipo": "punch",
+     "from": 352.4,
+     "to": 358.0,
+     "magnitud": 1.17
     },
     {
-      "tipo": "whip",
-      "at": 436.68,
-      "whoosh": true
+     "tipo": "punch",
+     "from": 541.0,
+     "to": 548.0,
+     "magnitud": 1.18
     },
     {
-      "tipo": "whip",
-      "at": 446.62,
-      "whoosh": true
+     "tipo": "punch",
+     "from": 575.6,
+     "to": 580.1,
+     "magnitud": 1.2
     },
     {
-      "tipo": "impacto",
-      "at": 498.78,
-      "fuerza": "fuerte",
-      "whoosh": true
+     "tipo": "punch",
+     "from": 665.1,
+     "to": 669.1,
+     "magnitud": 1.22
     },
     {
-      "tipo": "impacto",
-      "at": 679.1,
-      "fuerza": "fuerte",
-      "whoosh": true
+     "tipo": "punch",
+     "from": 674.7,
+     "to": 679.8,
+     "magnitud": 1.24
     },
     {
-      "tipo": "whip",
-      "at": 697.52,
-      "whoosh": true
+     "tipo": "enfasis",
+     "from": 682.9,
+     "to": 691.5,
+     "magnitud": 1.16
     },
     {
-      "tipo": "impacto",
-      "at": 710.4,
-      "fuerza": "fuerte",
-      "whoosh": true
+     "tipo": "enfasis",
+     "from": 730.5,
+     "to": 736.1,
+     "magnitud": 1.17
+    },
+    {
+     "tipo": "enfasis",
+     "from": 737.7,
+     "to": 745.7,
+     "magnitud": 1.2
+    },
+    {
+     "tipo": "enfasis",
+     "from": 752.4,
+     "to": 760.5,
+     "magnitud": 1.18
     }
-  ],
-  "audio": "audio_full.m4a"
+   ],
+   "broll": [],
+   "vertical": [],
+   "lowerThirds": [
+    {
+     "titulo": "Huanglong National Park",
+     "sub": "Sichuan \u00b7 China",
+     "at": 133.0,
+     "dur": 4.5
+    }
+   ],
+   "chips": [
+    {
+     "label": "Target",
+     "valor": "$1,000",
+     "at": 277.0,
+     "dur": 5.5,
+     "x": 0.06,
+     "y": 0.09
+    },
+    {
+     "label": "Resultado",
+     "valor": "+$500",
+     "at": 699.0,
+     "dur": 6.0,
+     "x": 0.05,
+     "y": 0.14,
+     "verde": true
+    }
+   ],
+   "cortes": [
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 0.0,
+     "in": 0,
+     "dur": 3.0
+    },
+    {
+     "src": "dia1/IMG_8391.MOV",
+     "at": 3.0,
+     "in": 2.0,
+     "dur": 3.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 6.0,
+     "in": 6.1,
+     "dur": 10.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 16.0,
+     "in": 15.625,
+     "dur": 0.5
+    },
+    {
+     "src": "dia1/IMG_8394.MOV",
+     "at": 16.5,
+     "in": 2.0,
+     "dur": 4.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 20.5,
+     "in": 20.5,
+     "dur": 2.5
+    },
+    {
+     "src": "dia2/IMG_8466.MOV",
+     "at": 23.0,
+     "in": 2.0,
+     "dur": 3.5
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 26.5,
+     "in": 26.6,
+     "dur": 26.0
+    },
+    {
+     "src": "dia1/IMG_8409.MOV",
+     "at": 52.5,
+     "in": 2.0,
+     "dur": 5.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 57.5,
+     "in": 57.8,
+     "dur": 45.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 102.5,
+     "in": 103.7,
+     "dur": 5.25
+    },
+    {
+     "src": "dia1/IMG_8409.MOV",
+     "at": 107.75,
+     "in": 0,
+     "dur": 4.0
+    },
+    {
+     "src": "dia1/IMG_8422.MOV",
+     "at": 107.75,
+     "in": 0,
+     "dur": 6.0
+    },
+    {
+     "src": "dia1/IMG_8425.MOV",
+     "at": 107.75,
+     "in": 0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 121.5,
+     "in": 109.0,
+     "dur": 10.0
+    },
+    {
+     "src": "dia1/IMG_8403.MOV",
+     "at": 131.5,
+     "in": 2.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 135.25,
+     "in": 122.75,
+     "dur": 4.5
+    },
+    {
+     "src": "dia1/IMG_8425.MOV",
+     "at": 139.75,
+     "in": 2.0,
+     "dur": 3.25
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 143.0,
+     "in": 130.525,
+     "dur": 0.75
+    },
+    {
+     "src": "dia1/IMG_8417.MOV",
+     "at": 143.75,
+     "in": 2.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 147.5,
+     "in": 136.35,
+     "dur": 2.5
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 150.0,
+     "in": 137.6,
+     "dur": 5.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 155.0,
+     "in": 143.1,
+     "dur": 15.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 170.0,
+     "in": 157.7,
+     "dur": 21.0
+    },
+    {
+     "src": "dia2/IMG_8472.MOV",
+     "at": 191.0,
+     "in": 2.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 194.75,
+     "in": 182.5,
+     "dur": 5.5
+    },
+    {
+     "src": "dia2/IMG_8464.MOV",
+     "at": 200.25,
+     "in": 0,
+     "dur": 3.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 203.25,
+     "in": 191.1,
+     "dur": 67.25
+    },
+    {
+     "src": "trading_nitido.mp4",
+     "at": 270.5,
+     "in": 0,
+     "dur": 44.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 314.5,
+     "in": 264.5,
+     "dur": 6.0
+    },
+    {
+     "src": "dia2/IMG_8467.MOV",
+     "at": 320.5,
+     "in": 6.7,
+     "dur": 0.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 321.25,
+     "in": 271.2,
+     "dur": 47.5
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 368.75,
+     "in": 318.2,
+     "dur": 2.5
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 371.25,
+     "in": 321.4,
+     "dur": 17.5
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 388.75,
+     "in": 341.6,
+     "dur": 6.0
+    },
+    {
+     "src": "dia2/IMG_8488.MOV",
+     "at": 394.75,
+     "in": 2.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 398.5,
+     "in": 351.4,
+     "dur": 2.25
+    },
+    {
+     "src": "dia2/IMG_8477.MOV",
+     "at": 400.75,
+     "in": 2.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 404.5,
+     "in": 357.375,
+     "dur": 1.25
+    },
+    {
+     "src": "dia2/IMG_8472.MOV",
+     "at": 405.75,
+     "in": 5.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 409.5,
+     "in": 362.425,
+     "dur": 3.0
+    },
+    {
+     "src": "dia2/IMG_8505.MOV",
+     "at": 412.5,
+     "in": 1.0,
+     "dur": 3.25
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 415.75,
+     "in": 368.7,
+     "dur": 15.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 430.75,
+     "in": 384.25,
+     "dur": 2.0
+    },
+    {
+     "src": "dia2/IMG_8469.MOV",
+     "at": 432.75,
+     "in": 1.0,
+     "dur": 4.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 436.75,
+     "in": 389.8,
+     "dur": 46.75
+    },
+    {
+     "src": "trading_nitido.mp4",
+     "at": 483.5,
+     "in": 44.0,
+     "dur": 42.5
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 526.0,
+     "in": 438.35,
+     "dur": 37.75
+    },
+    {
+     "src": "dia2/IMG_8506.MOV",
+     "at": 563.75,
+     "in": 2.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 567.5,
+     "in": 480.0,
+     "dur": 57.5
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 625.0,
+     "in": 537.9,
+     "dur": 72.5
+    },
+    {
+     "src": "trading_nitido.mp4",
+     "at": 697.5,
+     "in": 0,
+     "dur": 13.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 710.5,
+     "in": 611.1,
+     "dur": 2.0
+    },
+    {
+     "src": "trading_nitido.mp4",
+     "at": 712.5,
+     "in": 6.5,
+     "dur": 5.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 718.25,
+     "in": 618.9,
+     "dur": 2.0
+    },
+    {
+     "src": "dia2/IMG_8479.MOV",
+     "at": 720.25,
+     "in": 2.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 724.0,
+     "in": 624.65,
+     "dur": 14.0
+    },
+    {
+     "src": "dia2/IMG_8487.MOV",
+     "at": 738.0,
+     "in": 2.0,
+     "dur": 3.75
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 741.75,
+     "in": 642.4,
+     "dur": 5.5
+    },
+    {
+     "src": "dia2/IMG_8480.MOV",
+     "at": 747.25,
+     "in": 0,
+     "dur": 3.25
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 750.5,
+     "in": 651.188,
+     "dur": 3.75
+    },
+    {
+     "src": "dia2/IMG_8483.MOV",
+     "at": 754.25,
+     "in": 2.0,
+     "dur": 3.25
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 757.5,
+     "in": 658.25,
+     "dur": 10.0
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 767.5,
+     "in": 663.975,
+     "dur": 2.5
+    },
+    {
+     "src": "vlog_nitido.mp4",
+     "at": 770.0,
+     "in": 661.938,
+     "dur": 0.25
+    }
+   ]
+  }
+ ],
+ "musica": [],
+ "sfx": [],
+ "transiciones": [
+  {
+   "tipo": "whip",
+   "at": 45.25,
+   "whoosh": true
+  },
+  {
+   "tipo": "impacto",
+   "at": 107.7,
+   "fuerza": "fuerte",
+   "whoosh": true
+  },
+  {
+   "tipo": "whip",
+   "at": 121.5,
+   "whoosh": true
+  },
+  {
+   "tipo": "impacto",
+   "at": 270.58,
+   "fuerza": "fuerte",
+   "whoosh": true
+  },
+  {
+   "tipo": "whip",
+   "at": 314.6,
+   "whoosh": true
+  },
+  {
+   "tipo": "dip_black",
+   "at": 388.7,
+   "dur": 1.1
+  },
+  {
+   "tipo": "whip",
+   "at": 436.68,
+   "whoosh": true
+  },
+  {
+   "tipo": "whip",
+   "at": 446.62,
+   "whoosh": true
+  },
+  {
+   "tipo": "impacto",
+   "at": 498.78,
+   "fuerza": "fuerte",
+   "whoosh": true
+  },
+  {
+   "tipo": "impacto",
+   "at": 679.1,
+   "fuerza": "fuerte",
+   "whoosh": true
+  },
+  {
+   "tipo": "whip",
+   "at": 697.52,
+   "whoosh": true
+  },
+  {
+   "tipo": "impacto",
+   "at": 710.4,
+   "fuerza": "fuerte",
+   "whoosh": true
+  }
+ ],
+ "audio": "audio_full.m4a"
 }

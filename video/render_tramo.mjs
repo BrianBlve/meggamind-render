@@ -76,6 +76,7 @@ function piezasDelTramo(plan, from, to) {
     const fu = fuenteFile(plan, b.fuente ?? (b.tipo === "habla" || b.tipo === "trading" ? "vlog" : null));
     if (fu) s.add(fu);
     for (const c of b.clips ?? []) { if (c.clip) s.add(c.clip); }      // trailer/title_card/montage
+    for (const co of b.cortes ?? []) { const cf0 = ini + Math.round((co.at ?? 0) * fps), cf1 = cf0 + Math.round((co.dur ?? 0) * fps); if (cf1 >= from && cf0 <= to && co.src) s.add(co.src); } // edicion por cortes
     for (const br of b.broll ?? []) { if (br.clip) s.add(br.clip); }   // cutaways
     for (const v of b.vertical ?? []) { if (v.clip) s.add(v.clip); if (v.clip2) s.add(v.clip2); }
     for (const f of b.frags ?? []) { if (f.video) s.add(f.video); if (f.vo?.src) s.add(f.vo.src); } // cold_open
