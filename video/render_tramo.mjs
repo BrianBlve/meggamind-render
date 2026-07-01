@@ -73,7 +73,8 @@ function piezasDelTramo(plan, from, to) {
     const ini = acc, fin = acc + dur - 1;
     acc += dur;
     if (fin < from || ini > to) continue;            // no intersecta el tramo
-    const fu = fuenteFile(plan, b.fuente ?? (b.tipo === "habla" || b.tipo === "trading" ? "vlog" : null));
+    // Si el bloque usa `cortes` (edición nativa por tomas), NO baja la fuente completa (no se usa).
+    const fu = (b.cortes && b.cortes.length) ? null : fuenteFile(plan, b.fuente ?? (b.tipo === "habla" || b.tipo === "trading" ? "vlog" : null));
     if (fu) s.add(fu);
     for (const c of b.clips ?? []) { if (c.clip) s.add(c.clip); }      // trailer/title_card/montage
     for (const co of b.cortes ?? []) { const cf0 = ini + Math.round((co.at ?? 0) * fps), cf1 = cf0 + Math.round((co.dur ?? 0) * fps); if (cf1 >= from && cf0 <= to) { const key = plan.modo === "proxy" && co.psrc ? `proxy/${co.psrc}` : co.src; if (key) s.add(key); } } // edicion por cortes (proxy usa el segmento pre-cortado psrc)
