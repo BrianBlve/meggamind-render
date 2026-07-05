@@ -80,6 +80,22 @@ async function subirMultipart(archivo, key, tam) {
   } finally { await fh.close(); }
 }
 
+// Cuenta frames de video reales de un mp4 (para declarar duration exacta y evitar drift en el concat).
+async function framesDe(archivo) {
+  return await new Promise((resolve, reject) => {
+    const p = spawn("ffprobe", ["-v", "error", "-select_streams", "v:0",
+      "-count_packets", "-show_entries", "stream=nb_read_packets", "-of", "csv=p=0", archivo]);
+    let out = "";
+    p.stdout.on("data", (d) => (out += d));
+    p.on("close", (c) => {
+      const n = parseInt(out.trim(), 10);
+      if (c === 0 && Number.isFinite(n) && n > 0) resolve(n);
+      else reject(new Error(`ffprobe frames falló (${c}) en ${path.basename(archivo)}: '${out.trim()}'`));
+    });
+    p.on("error", reject);
+  });
+}
+
 async function main() {
   const dir = path.resolve("out", "tramos");
   await mkdir(dir, { recursive: true });
@@ -95,13 +111,26 @@ async function main() {
     locales.push(dst);
   }
 
+  // RECETA PROBADA (evita drift +60ms/unión): duration EXPLÍCITA por tramo (contando frames reales)
+  // + concat mapeando SOLO video (-c:v copy) + muxear audio_full FRESCO aparte (nunca el audio de los tramos).
+  const lineas = [];
+  for (const dst of locales) {
+    const nf = await framesDe(dst);
+    lineas.push(`file '${dst.replace(/'/g, "'\\''")}'`);
+    lineas.push(`duration ${(nf / 60).toFixed(6)}`);
+  }
   const lista = path.join(dir, "lista.txt");
-  await writeFile(lista, locales.map((p) => `file '${p.replace(/'/g, "'\\''")}'`).join("\n") + "\n");
+  await writeFile(lista, lineas.join("\n") + "\n");
+
+  // audio_full fresco desde R2 (pista única desde el frame 0)
+  const audio = path.join(dir, "audio_full.m4a");
+  console.log(`[concat] R2 -> audio_full.m4a`);
+  await descargar("china/audio_full.m4a", audio);
 
   const out = path.resolve("out", "VLOG_CHINA_FINAL_4K.mp4");
-  console.log(`[concat] ffmpeg: video copy (4K intacto) + audio aac -> ${path.basename(out)}`);
-  await run("ffmpeg", ["-y", "-f", "concat", "-safe", "0", "-i", lista,
-    "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-movflags", "+faststart", out]);
+  console.log(`[concat] ffmpeg: video copy (4K intacto) + audio_full muxeado aparte -> ${path.basename(out)}`);
+  await run("ffmpeg", ["-y", "-f", "concat", "-safe", "0", "-i", lista, "-i", audio,
+    "-map", "0:v:0", "-map", "1:a:0", "-c", "copy", "-movflags", "+faststart", out]);
 
   const tam = (await stat(out)).size;
   console.log(`[concat] subiendo ${(tam / 1e6).toFixed(0)} MB -> ${OUT_KEY} (multipart)`);
