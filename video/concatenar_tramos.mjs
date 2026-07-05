@@ -5,9 +5,10 @@
 // Env: R2_* (cuenta/llaves/bucket), OUT_KEY (render/VLOG_CHINA_FINAL_4K.mp4).
 import {
   S3Client, GetObjectCommand, PutObjectCommand, ListObjectsV2Command, DeleteObjectsCommand,
+  CreateMultipartUploadCommand, UploadPartCommand, CompleteMultipartUploadCommand, AbortMultipartUploadCommand,
 } from "@aws-sdk/client-s3";
 import { spawn } from "node:child_process";
-import { mkdir, readFile, writeFile, stat } from "node:fs/promises";
+import { mkdir, readFile, writeFile, stat, open as abrir } from "node:fs/promises";
 import { createWriteStream } from "node:fs";
 import { pipeline } from "node:stream/promises";
 import path from "node:path";
@@ -46,6 +47,39 @@ async function descargar(key, destino) {
   await pipeline(r.Body, createWriteStream(destino));
 }
 
+
+// Subida multipart por partes de 64 MB con reintentos (PutObject simple revienta a los 2 GiB).
+async function subirMultipart(archivo, key, tam) {
+  const PARTE = 64 * 1024 * 1024;
+  const { UploadId } = await s3.send(new CreateMultipartUploadCommand({ Bucket: E.R2_BUCKET, Key: key }));
+  const fh = await abrir(archivo, "r");
+  const partes = [];
+  try {
+    for (let i = 0, num = 1; i < tam; i += PARTE, num++) {
+      const len = Math.min(PARTE, tam - i);
+      const buf = Buffer.alloc(len);
+      await fh.read(buf, 0, len, i);
+      let etag;
+      for (let att = 0; ; att++) {
+        try {
+          const r = await s3.send(new UploadPartCommand({ Bucket: E.R2_BUCKET, Key: key, UploadId, PartNumber: num, Body: buf }));
+          etag = r.ETag; break;
+        } catch (e) {
+          if (att >= 5) throw e;
+          console.log(`  parte ${num}: reintento ${att + 1} (${e.message})`);
+          await new Promise((res) => setTimeout(res, 3000 * (att + 1)));
+        }
+      }
+      partes.push({ ETag: etag, PartNumber: num });
+      if (num % 20 === 0) console.log(`  ${((i + len) / tam * 100).toFixed(0)}% subido`);
+    }
+    await s3.send(new CompleteMultipartUploadCommand({ Bucket: E.R2_BUCKET, Key: key, UploadId, MultipartUpload: { Parts: partes } }));
+  } catch (e) {
+    await s3.send(new AbortMultipartUploadCommand({ Bucket: E.R2_BUCKET, Key: key, UploadId })).catch(() => {});
+    throw e;
+  } finally { await fh.close(); }
+}
+
 async function main() {
   const dir = path.resolve("out", "tramos");
   await mkdir(dir, { recursive: true });
@@ -69,13 +103,18 @@ async function main() {
   await run("ffmpeg", ["-y", "-f", "concat", "-safe", "0", "-i", lista,
     "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-movflags", "+faststart", out]);
 
-  const mb = (await stat(out)).size / 1e6;
-  console.log(`[concat] subiendo ${mb.toFixed(0)} MB -> ${OUT_KEY}`);
-  await s3.send(new PutObjectCommand({ Bucket: E.R2_BUCKET, Key: OUT_KEY, Body: await readFile(out) }));
+  const tam = (await stat(out)).size;
+  console.log(`[concat] subiendo ${(tam / 1e6).toFixed(0)} MB -> ${OUT_KEY} (multipart)`);
+  // PutObject simple tiene límite de 2 GiB: el master 4K (~8 GB) se sube por multipart (64 MB por parte).
+  await subirMultipart(out, OUT_KEY, tam);
 
-  // Borrar los tramos parciales: ya no sirven y liberan espacio (regla de los 10 GB de R2).
-  await s3.send(new DeleteObjectsCommand({ Bucket: E.R2_BUCKET, Delete: { Objects: keys.map((k) => ({ Key: k })) } }));
-  console.log(`[concat] tramos borrados (${keys.length}). ✅ MP4 4K final en R2: ${OUT_KEY}`);
+  if (E.KEEP_TRAMOS === "1") {
+    console.log(`[concat] tramos CONSERVADOS (KEEP_TRAMOS=1; borrar tras verificar el master). ✅ MP4 4K final en R2: ${OUT_KEY}`);
+  } else {
+    // Borrar los tramos parciales: ya no sirven y liberan espacio (regla de los 10 GB de R2).
+    await s3.send(new DeleteObjectsCommand({ Bucket: E.R2_BUCKET, Delete: { Objects: keys.map((k) => ({ Key: k })) } }));
+    console.log(`[concat] tramos borrados (${keys.length}). ✅ MP4 4K final en R2: ${OUT_KEY}`);
+  }
 }
 
 main().catch((e) => { console.error("concat FALLÓ:", e.message); process.exit(1); });
