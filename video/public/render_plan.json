@@ -33,7 +33,7 @@
      "at": 0.0,
      "in": 0.0,
      "dur": 3.84,
-     "psrc": "seg/b0_00.mp4",
+     "psrc": "seg/t0_000_720.mp4",
      "src_original": "trading_nitido.mp4",
      "in_original": 20.5
     },
@@ -42,7 +42,7 @@
      "at": 3.84,
      "in": 0.0,
      "dur": 2.82,
-     "psrc": "seg/b0_01.mp4",
+     "psrc": "seg/b0_001_720.mp4",
      "src_original": "dia2/IMG_8488.MOV",
      "in_original": 3.0
     },
@@ -51,7 +51,7 @@
      "at": 6.66,
      "in": 0.0,
      "dur": 2.43,
-     "psrc": "seg/b0_02.mp4",
+     "psrc": "seg/b0_002_720.mp4",
      "src_original": "dia1/IMG_8409.MOV",
      "in_original": 2.5
     },
@@ -60,7 +60,7 @@
      "at": 9.09,
      "in": 0.0,
      "dur": 1.27,
-     "psrc": "seg/b0_03.mp4",
+     "psrc": "seg/b0_003_720.mp4",
      "src_original": "dia2/IMG_8479.MOV",
      "in_original": 3.0
     },
@@ -69,7 +69,7 @@
      "at": 10.36,
      "in": 0.0,
      "dur": 2.04,
-     "psrc": "seg/b0_04.mp4",
+     "psrc": "seg/b0_004_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 8.97
     },
@@ -78,7 +78,7 @@
      "at": 12.4,
      "in": 0.0,
      "dur": 3.1,
-     "psrc": "seg/b0_05.mp4",
+     "psrc": "seg/b0_005_720.mp4",
      "src_original": "dia2/IMG_8479.MOV",
      "in_original": 4.27
     }
@@ -186,12 +186,39 @@
     },
     {
      "tipo": "panzoom",
-     "from": 487,
+     "from": 496.5,
      "to": 508,
      "de": 1.18,
      "a": 1.48,
      "origenX": 0.5,
      "origenY": 0.45
+    },
+    {
+     "tipo": "panzoom",
+     "from": 509.0,
+     "to": 515.5,
+     "de": 1.08,
+     "a": 1.28,
+     "origenX": 0.45,
+     "origenY": 0.4
+    },
+    {
+     "tipo": "panzoom",
+     "from": 516.0,
+     "to": 521.0,
+     "de": 1.26,
+     "a": 1.08,
+     "origenX": 0.55,
+     "origenY": 0.45
+    },
+    {
+     "tipo": "panzoom",
+     "from": 521.5,
+     "to": 525.8,
+     "de": 1.1,
+     "a": 1.3,
+     "origenX": 0.5,
+     "origenY": 0.5
     },
     {
      "tipo": "punch",
@@ -322,7 +349,7 @@
      "at": 0.0,
      "in": 0.0,
      "dur": 3.0,
-     "psrc": "seg/b1_00.mp4",
+     "psrc": "seg/b1_000_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 7.167
     },
@@ -331,7 +358,7 @@
      "at": 3.0,
      "in": 0.0,
      "dur": 3.0,
-     "psrc": "seg/b1_01.mp4",
+     "psrc": "seg/b1_001_720.mp4",
      "src_original": "dia1/IMG_8391.MOV",
      "in_original": 2.0
     },
@@ -340,7 +367,7 @@
      "at": 6.0,
      "in": 0.0,
      "dur": 1.0,
-     "psrc": "seg/b1_02.mp4",
+     "psrc": "seg/b1_002_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 13.167
     },
@@ -350,7 +377,8 @@
      "in": 0.0,
      "dur": 1.3,
      "src_original": "dia1/IMG_8388.MOV",
-     "in_original": 14.167
+     "in_original": 14.167,
+     "psrc": "seg/b1_003_720.mp4"
     },
     {
      "src": "rsrc/b1_004.mp4",
@@ -358,7 +386,8 @@
      "in": 0.0,
      "dur": 3.5,
      "src_original": "dia1/IMG_8391.MOV",
-     "in_original": 1.5
+     "in_original": 1.5,
+     "psrc": "seg/b1_004_720.mp4"
     },
     {
      "src": "rsrc/b1_005.mp4",
@@ -366,14 +395,15 @@
      "in": 0.0,
      "dur": 0.367,
      "src_original": "dia1/IMG_8388.MOV",
-     "in_original": 18.966
+     "in_original": 18.966,
+     "psrc": "seg/b1_005_720.mp4"
     },
     {
      "src": "rsrc/b1_006.mp4",
      "at": 12.167,
      "in": 0.0,
      "dur": 4.333,
-     "psrc": "seg/b1_09.mp4",
+     "psrc": "seg/b1_006_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 19.333
     },
@@ -382,7 +412,7 @@
      "at": 16.5,
      "in": 0.0,
      "dur": 4.0,
-     "psrc": "seg/b1_10.mp4",
+     "psrc": "seg/b1_007_720.mp4",
      "src_original": "dia1/IMG_8394.MOV",
      "in_original": 2.0
     },
@@ -391,7 +421,7 @@
      "at": 20.5,
      "in": 0.0,
      "dur": 2.5,
-     "psrc": "seg/b1_11.mp4",
+     "psrc": "seg/b1_008_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 27.667
     },
@@ -400,7 +430,7 @@
      "at": 23.0,
      "in": 0.0,
      "dur": 3.5,
-     "psrc": "seg/b1_12.mp4",
+     "psrc": "seg/b1_009_720.mp4",
      "src_original": "dia2/IMG_8466.MOV",
      "in_original": 2.0
     },
@@ -409,7 +439,7 @@
      "at": 26.5,
      "in": 0.0,
      "dur": 3.333,
-     "psrc": "seg/b1_13.mp4",
+     "psrc": "seg/b1_010_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 33.667
     },
@@ -418,7 +448,7 @@
      "at": 29.833,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_14.mp4",
+     "psrc": "seg/b1_011_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 37.0
     },
@@ -427,7 +457,7 @@
      "at": 31.833,
      "in": 0.0,
      "dur": 2.834,
-     "psrc": "seg/b1_15.mp4",
+     "psrc": "seg/b1_012_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 39.0
     },
@@ -436,7 +466,7 @@
      "at": 34.667,
      "in": 0.0,
      "dur": 2.166,
-     "psrc": "seg/b1_16.mp4",
+     "psrc": "seg/b1_013_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 41.833
     },
@@ -445,7 +475,7 @@
      "at": 36.833,
      "in": 0.0,
      "dur": 3.0,
-     "psrc": "seg/b1_17.mp4",
+     "psrc": "seg/b1_014_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 44.0
     },
@@ -454,7 +484,7 @@
      "at": 39.833,
      "in": 0.0,
      "dur": 4.5,
-     "psrc": "seg/b1_18.mp4",
+     "psrc": "seg/b1_015_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 47.0
     },
@@ -463,7 +493,7 @@
      "at": 44.333,
      "in": 0.0,
      "dur": 1.167,
-     "psrc": "seg/b1_19.mp4",
+     "psrc": "seg/b1_016_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 52.667
     },
@@ -472,7 +502,7 @@
      "at": 45.5,
      "in": 0.0,
      "dur": 0.833,
-     "psrc": "seg/b1_20.mp4",
+     "psrc": "seg/b1_017_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 55.833
     },
@@ -481,7 +511,7 @@
      "at": 46.333,
      "in": 0.0,
      "dur": 6.167,
-     "psrc": "seg/b1_21.mp4",
+     "psrc": "seg/b1_018_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 58.0
     },
@@ -490,7 +520,7 @@
      "at": 52.5,
      "in": 0.0,
      "dur": 5.0,
-     "psrc": "seg/b1_22.mp4",
+     "psrc": "seg/b1_019_720.mp4",
      "src_original": "dia1/IMG_8409.MOV",
      "in_original": 1.9
     },
@@ -499,7 +529,7 @@
      "at": 57.5,
      "in": 0.0,
      "dur": 46.0,
-     "psrc": "seg/b1_23.mp4",
+     "psrc": "seg/b1_020_720.mp4",
      "src_original": "dia1/IMG_8388.MOV",
      "in_original": 72.667
     },
@@ -508,7 +538,7 @@
      "at": 103.5,
      "in": 0.0,
      "dur": 3.0,
-     "psrc": "seg/b1_24.mp4",
+     "psrc": "seg/b1_021_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 3.833
     },
@@ -517,7 +547,7 @@
      "at": 106.5,
      "in": 0.0,
      "dur": 1.25,
-     "psrc": "seg/b1_25.mp4",
+     "psrc": "seg/b1_022_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 6.833
     },
@@ -526,7 +556,7 @@
      "at": 107.75,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_26.mp4",
+     "psrc": "seg/b1_023_720.mp4",
      "src_original": "dia1/IMG_8409.MOV",
      "in_original": 2.0
     },
@@ -535,7 +565,7 @@
      "at": 109.25,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_27.mp4",
+     "psrc": "seg/b1_024_720.mp4",
      "src_original": "dia1/IMG_8409.MOV",
      "in_original": 3.0
     },
@@ -544,7 +574,7 @@
      "at": 110.75,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_28.mp4",
+     "psrc": "seg/b1_025_720.mp4",
      "src_original": "dia1/IMG_8417.MOV",
      "in_original": 2.5
     },
@@ -553,7 +583,7 @@
      "at": 112.25,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_29.mp4",
+     "psrc": "seg/b1_026_720.mp4",
      "src_original": "dia1/IMG_8417.MOV",
      "in_original": 3.5
     },
@@ -562,7 +592,7 @@
      "at": 113.75,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_30.mp4",
+     "psrc": "seg/b1_027_720.mp4",
      "src_original": "dia1/IMG_8422.MOV",
      "in_original": 3.0
     },
@@ -571,7 +601,7 @@
      "at": 115.25,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_31.mp4",
+     "psrc": "seg/b1_028_720.mp4",
      "src_original": "dia1/IMG_8425.MOV",
      "in_original": 1.0
     },
@@ -580,7 +610,7 @@
      "at": 116.75,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_32.mp4",
+     "psrc": "seg/b1_029_720.mp4",
      "src_original": "dia1/IMG_8425.MOV",
      "in_original": 3.0
     },
@@ -589,7 +619,7 @@
      "at": 118.25,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_33.mp4",
+     "psrc": "seg/b1_030_720.mp4",
      "src_original": "dia1/IMG_8425.MOV",
      "in_original": 4.0
     },
@@ -598,7 +628,7 @@
      "at": 119.75,
      "in": 0.0,
      "dur": 1.75,
-     "psrc": "seg/b1_34.mp4",
+     "psrc": "seg/b1_031_720.mp4",
      "src_original": "dia1/IMG_8431.MOV",
      "in_original": 3.25
     },
@@ -607,7 +637,7 @@
      "at": 121.5,
      "in": 0.0,
      "dur": 10.0,
-     "psrc": "seg/b1_35.mp4",
+     "psrc": "seg/b1_032_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 8.0
     },
@@ -616,7 +646,7 @@
      "at": 131.5,
      "in": 0.0,
      "dur": 3.75,
-     "psrc": "seg/b1_36.mp4",
+     "psrc": "seg/b1_033_720.mp4",
      "src_original": "dia1/IMG_8403.MOV",
      "in_original": 2.0
     },
@@ -625,7 +655,7 @@
      "at": 135.25,
      "in": 0.0,
      "dur": 4.5,
-     "psrc": "seg/b1_37.mp4",
+     "psrc": "seg/b1_034_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 21.667
     },
@@ -634,7 +664,7 @@
      "at": 139.75,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_38.mp4",
+     "psrc": "seg/b1_035_720.mp4",
      "src_original": "dia1/IMG_8425.MOV",
      "in_original": 2.0
     },
@@ -643,7 +673,7 @@
      "at": 141.75,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_39.mp4",
+     "psrc": "seg/b1_036_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 28.25
     },
@@ -652,7 +682,7 @@
      "at": 143.75,
      "in": 0.0,
      "dur": 3.75,
-     "psrc": "seg/b1_40.mp4",
+     "psrc": "seg/b1_037_720.mp4",
      "src_original": "dia1/IMG_8417.MOV",
      "in_original": 2.5
     },
@@ -661,7 +691,7 @@
      "at": 147.5,
      "in": 0.0,
      "dur": 18.833,
-     "psrc": "seg/b1_41.mp4",
+     "psrc": "seg/b1_038_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 34.0
     },
@@ -670,7 +700,7 @@
      "at": 166.333,
      "in": 0.0,
      "dur": 6.834,
-     "psrc": "seg/b1_42.mp4",
+     "psrc": "seg/b1_039_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 53.5
     },
@@ -679,7 +709,7 @@
      "at": 173.167,
      "in": 0.0,
      "dur": 4.5,
-     "psrc": "seg/b1_43.mp4",
+     "psrc": "seg/b1_040_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 60.333
     },
@@ -688,7 +718,7 @@
      "at": 177.667,
      "in": 0.0,
      "dur": 1.333,
-     "psrc": "seg/b1_44.mp4",
+     "psrc": "seg/b1_041_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 64.833
     },
@@ -697,7 +727,7 @@
      "at": 179.0,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_45.mp4",
+     "psrc": "seg/b1_042_720.mp4",
      "src_original": "dia1/IMG_8405.MOV",
      "in_original": 66.167
     },
@@ -706,7 +736,7 @@
      "at": 181.0,
      "in": 0.0,
      "dur": 10.0,
-     "psrc": "seg/b1_46.mp4",
+     "psrc": "seg/b1_043_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 12.667
     },
@@ -715,7 +745,7 @@
      "at": 191.0,
      "in": 0.0,
      "dur": 3.75,
-     "psrc": "seg/b1_47.mp4",
+     "psrc": "seg/b1_044_720.mp4",
      "src_original": "dia2/IMG_8472.MOV",
      "in_original": 2.0
     },
@@ -724,7 +754,7 @@
      "at": 194.75,
      "in": 0.0,
      "dur": 5.5,
-     "psrc": "seg/b1_48.mp4",
+     "psrc": "seg/b1_045_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 26.333
     },
@@ -733,7 +763,7 @@
      "at": 200.25,
      "in": 0.0,
      "dur": 3.0,
-     "psrc": "seg/b1_49.mp4",
+     "psrc": "seg/b1_046_720.mp4",
      "src_original": "dia2/IMG_8464.MOV",
      "in_original": 0.0
     },
@@ -742,7 +772,7 @@
      "at": 203.25,
      "in": 0.0,
      "dur": 0.833,
-     "psrc": "seg/b1_50.mp4",
+     "psrc": "seg/b1_047_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 34.833
     },
@@ -751,7 +781,7 @@
      "at": 204.083,
      "in": 0.0,
      "dur": 2.5,
-     "psrc": "seg/b1_51.mp4",
+     "psrc": "seg/b1_048_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 35.833
     },
@@ -760,7 +790,7 @@
      "at": 206.583,
      "in": 0.0,
      "dur": 6.834,
-     "psrc": "seg/b1_52.mp4",
+     "psrc": "seg/b1_049_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 38.333
     },
@@ -769,7 +799,7 @@
      "at": 213.417,
      "in": 0.0,
      "dur": 9.833,
-     "psrc": "seg/b1_53.mp4",
+     "psrc": "seg/b1_050_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 45.167
     },
@@ -778,7 +808,7 @@
      "at": 223.25,
      "in": 0.0,
      "dur": 1.667,
-     "psrc": "seg/b1_54.mp4",
+     "psrc": "seg/b1_051_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 54.833
     },
@@ -787,7 +817,7 @@
      "at": 224.917,
      "in": 0.0,
      "dur": 4.666,
-     "psrc": "seg/b1_55.mp4",
+     "psrc": "seg/b1_052_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 56.667
     },
@@ -796,7 +826,7 @@
      "at": 229.583,
      "in": 0.0,
      "dur": 14.167,
-     "psrc": "seg/b1_56.mp4",
+     "psrc": "seg/b1_053_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 61.167
     },
@@ -805,7 +835,7 @@
      "at": 243.75,
      "in": 0.0,
      "dur": 10.5,
-     "psrc": "seg/b1_57.mp4",
+     "psrc": "seg/b1_054_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 75.5
     },
@@ -814,7 +844,7 @@
      "at": 254.25,
      "in": 0.0,
      "dur": 4.667,
-     "psrc": "seg/b1_58.mp4",
+     "psrc": "seg/b1_055_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 86.0
     },
@@ -823,7 +853,7 @@
      "at": 258.917,
      "in": 0.0,
      "dur": 2.333,
-     "psrc": "seg/b1_59.mp4",
+     "psrc": "seg/b1_056_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 90.667
     },
@@ -832,7 +862,7 @@
      "at": 261.25,
      "in": 0.0,
      "dur": 5.333,
-     "psrc": "seg/b1_60.mp4",
+     "psrc": "seg/b1_057_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 92.833
     },
@@ -841,7 +871,7 @@
      "at": 266.583,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_61.mp4",
+     "psrc": "seg/b1_058_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 98.25
     },
@@ -850,7 +880,7 @@
      "at": 268.083,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_62.mp4",
+     "psrc": "seg/b1_059_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 99.667
     },
@@ -859,7 +889,7 @@
      "at": 270.083,
      "in": 0.0,
      "dur": 0.417,
-     "psrc": "seg/b1_63.mp4",
+     "psrc": "seg/b1_060_720.mp4",
      "src_original": "dia1/IMG_8419.MOV",
      "in_original": 101.833
     },
@@ -868,7 +898,7 @@
      "at": 270.5,
      "in": 0.0,
      "dur": 44.167,
-     "psrc": "seg/b1_64.mp4",
+     "psrc": "seg/t1_061_720.mp4",
      "src_original": "trading_nitido.mp4",
      "in_original": 0.0
     },
@@ -877,7 +907,7 @@
      "at": 314.667,
      "in": 0.0,
      "dur": 5.833,
-     "psrc": "seg/b1_65.mp4",
+     "psrc": "seg/b1_062_720.mp4",
      "src_original": "dia2/IMG_8467.MOV",
      "in_original": 1.167
     },
@@ -887,7 +917,8 @@
      "in": 0.0,
      "dur": 2.0,
      "src_original": "dia2/IMG_8467.MOV",
-     "in_original": 6.7
+     "in_original": 6.7,
+     "psrc": "seg/b1_063_720.mp4"
     },
     {
      "src": "rsrc/b1_064.mp4",
@@ -895,14 +926,15 @@
      "in": 0.0,
      "dur": 64.417,
      "src_original": "dia2/IMG_8467.MOV",
-     "in_original": 11.584
+     "in_original": 11.584,
+     "psrc": "seg/b1_064_720.mp4"
     },
     {
      "src": "rsrc/b1_065.mp4",
      "at": 386.917,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_69.mp4",
+     "psrc": "seg/b1_065_720.mp4",
      "src_original": "dia2/IMG_8467.MOV",
      "in_original": 76.0
     },
@@ -911,7 +943,7 @@
      "at": 388.917,
      "in": 0.0,
      "dur": 1.166,
-     "psrc": "seg/b1_70.mp4",
+     "psrc": "seg/b1_066_720.mp4",
      "src_original": "dia2/IMG_8490.MOV",
      "in_original": 4.5
     },
@@ -920,7 +952,7 @@
      "at": 390.083,
      "in": 0.0,
      "dur": 4.667,
-     "psrc": "seg/b1_71.mp4",
+     "psrc": "seg/b1_067_720.mp4",
      "src_original": "dia2/IMG_8490.MOV",
      "in_original": 5.667
     },
@@ -929,7 +961,7 @@
      "at": 394.75,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_72.mp4",
+     "psrc": "seg/b1_068_720.mp4",
      "src_original": "dia2/IMG_8488.MOV",
      "in_original": 2.0
     },
@@ -938,7 +970,7 @@
      "at": 396.25,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_73.mp4",
+     "psrc": "seg/b1_069_720.mp4",
      "src_original": "dia2/IMG_8488.MOV",
      "in_original": 3.0
     },
@@ -947,7 +979,7 @@
      "at": 397.75,
      "in": 0.0,
      "dur": 0.75,
-     "psrc": "seg/b1_74.mp4",
+     "psrc": "seg/b1_070_720.mp4",
      "src_original": "dia2/IMG_8488.MOV",
      "in_original": 5.5
     },
@@ -956,7 +988,7 @@
      "at": 398.5,
      "in": 0.0,
      "dur": 1.0,
-     "psrc": "seg/b1_75.mp4",
+     "psrc": "seg/b1_071_720.mp4",
      "src_original": "dia2/IMG_8490.MOV",
      "in_original": 14.167
     },
@@ -965,7 +997,7 @@
      "at": 399.5,
      "in": 0.0,
      "dur": 1.25,
-     "psrc": "seg/b1_76.mp4",
+     "psrc": "seg/b1_072_720.mp4",
      "src_original": "dia2/IMG_8490.MOV",
      "in_original": 15.167
     },
@@ -974,7 +1006,7 @@
      "at": 400.75,
      "in": 0.0,
      "dur": 3.75,
-     "psrc": "seg/b1_77.mp4",
+     "psrc": "seg/b1_073_720.mp4",
      "src_original": "dia2/IMG_8477.MOV",
      "in_original": 2.0
     },
@@ -983,7 +1015,7 @@
      "at": 404.5,
      "in": 0.0,
      "dur": 1.25,
-     "psrc": "seg/b1_78.mp4",
+     "psrc": "seg/b1_074_720.mp4",
      "src_original": "dia2/IMG_8490.MOV",
      "in_original": 20.167
     },
@@ -992,7 +1024,7 @@
      "at": 405.75,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_79.mp4",
+     "psrc": "seg/b1_075_720.mp4",
      "src_original": "dia2/IMG_8472.MOV",
      "in_original": 5.0
     },
@@ -1001,7 +1033,7 @@
      "at": 407.25,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_80.mp4",
+     "psrc": "seg/b1_076_720.mp4",
      "src_original": "dia2/IMG_8472.MOV",
      "in_original": 6.5
     },
@@ -1010,7 +1042,7 @@
      "at": 408.75,
      "in": 0.0,
      "dur": 0.75,
-     "psrc": "seg/b1_81.mp4",
+     "psrc": "seg/b1_077_720.mp4",
      "src_original": "dia2/IMG_8472.MOV",
      "in_original": 8.5
     },
@@ -1019,7 +1051,7 @@
      "at": 409.5,
      "in": 0.0,
      "dur": 3.0,
-     "psrc": "seg/b1_82.mp4",
+     "psrc": "seg/b1_078_720.mp4",
      "src_original": "dia2/IMG_8490.MOV",
      "in_original": 25.167
     },
@@ -1028,7 +1060,7 @@
      "at": 412.5,
      "in": 0.0,
      "dur": 3.25,
-     "psrc": "seg/b1_83.mp4",
+     "psrc": "seg/b1_079_720.mp4",
      "src_original": "dia2/IMG_8505.MOV",
      "in_original": 1.0
     },
@@ -1037,7 +1069,7 @@
      "at": 415.75,
      "in": 0.0,
      "dur": 17.0,
-     "psrc": "seg/b1_84.mp4",
+     "psrc": "seg/b1_080_720.mp4",
      "src_original": "dia2/IMG_8490.MOV",
      "in_original": 31.333
     },
@@ -1046,7 +1078,7 @@
      "at": 432.75,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_85.mp4",
+     "psrc": "seg/b1_081_720.mp4",
      "src_original": "dia2/IMG_8469.MOV",
      "in_original": 1.0
     },
@@ -1055,7 +1087,7 @@
      "at": 434.25,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_86.mp4",
+     "psrc": "seg/b1_082_720.mp4",
      "src_original": "dia2/IMG_8469.MOV",
      "in_original": 2.0
     },
@@ -1064,7 +1096,7 @@
      "at": 435.75,
      "in": 0.0,
      "dur": 1.0,
-     "psrc": "seg/b1_87.mp4",
+     "psrc": "seg/b1_083_720.mp4",
      "src_original": "dia2/IMG_8469.MOV",
      "in_original": 4.0
     },
@@ -1073,7 +1105,7 @@
      "at": 436.75,
      "in": 0.0,
      "dur": 9.75,
-     "psrc": "seg/b1_88.mp4",
+     "psrc": "seg/b1_084_720.mp4",
      "src_original": "dia2/IMG_8490.MOV",
      "in_original": 52.333
     },
@@ -1082,7 +1114,7 @@
      "at": 446.5,
      "in": 0.0,
      "dur": 3.5,
-     "psrc": "seg/b1_89.mp4",
+     "psrc": "seg/b1_085_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 4.5
     },
@@ -1091,7 +1123,7 @@
      "at": 450.0,
      "in": 0.0,
      "dur": 20.5,
-     "psrc": "seg/b1_90.mp4",
+     "psrc": "seg/b1_086_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 7.833
     },
@@ -1100,7 +1132,7 @@
      "at": 470.5,
      "in": 0.0,
      "dur": 6.7,
-     "psrc": "seg/b1_91.mp4",
+     "psrc": "seg/b1_087_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 28.5
     },
@@ -1108,26 +1140,44 @@
      "src": "rsrc/b1_088.mp4",
      "at": 477.2,
      "in": 0.0,
-     "dur": 6.3,
-     "psrc": "seg/b1_92.mp4",
+     "dur": 5.55,
+     "psrc": "seg/b1_088_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 35.0
     },
     {
-     "src": "rsrc/t1_089.mp4",
-     "at": 483.5,
+     "src": "rsrc/t818_0.mp4",
+     "at": 482.75,
      "in": 0.0,
-     "dur": 42.5,
-     "psrc": "seg/b1_93.mp4",
+     "dur": 11.65,
      "src_original": "trading_nitido.mp4",
-     "in_original": 44.0
+     "in_original": 45.4,
+     "psrc": "seg/t818_0_720.mp4"
+    },
+    {
+     "src": "rsrc/t818_1.mp4",
+     "at": 494.4,
+     "in": 0.0,
+     "dur": 1.4,
+     "src_original": "trading_nitido.mp4",
+     "in_original": 44.0,
+     "psrc": "seg/t818_1_720.mp4"
+    },
+    {
+     "src": "rsrc/t818_2.mp4",
+     "at": 495.8,
+     "in": 0.0,
+     "dur": 30.2,
+     "src_original": "trading_nitido.mp4",
+     "in_original": 56.3,
+     "psrc": "seg/t818_2_720.mp4"
     },
     {
      "src": "rsrc/b1_090.mp4",
      "at": 526.0,
      "in": 0.0,
      "dur": 3.5,
-     "psrc": "seg/b1_94.mp4",
+     "psrc": "seg/b1_090_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 42.833
     },
@@ -1136,7 +1186,7 @@
      "at": 529.5,
      "in": 0.0,
      "dur": 7.667,
-     "psrc": "seg/b1_95.mp4",
+     "psrc": "seg/b1_091_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 46.333
     },
@@ -1145,7 +1195,7 @@
      "at": 537.167,
      "in": 0.0,
      "dur": 22.5,
-     "psrc": "seg/b1_96.mp4",
+     "psrc": "seg/b1_092_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 54.0
     },
@@ -1153,81 +1203,53 @@
      "src": "rsrc/b1_093.mp4",
      "at": 559.667,
      "in": 0.0,
-     "dur": 4.133,
-     "psrc": "seg/b1_97.mp4",
+     "dur": 4.083,
+     "psrc": "seg/b1_093_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 76.5
     },
     {
-     "src": "rsrc/r094.mp4",
-     "at": 563.8,
+     "src": "rsrc/r942.mp4",
+     "at": 563.75,
      "in": 0.0,
-     "dur": 3.7,
+     "dur": 3.75,
      "src_original": "dia2/IMG_8506.MOV",
-     "in_original": 2.1
+     "in_original": 2.1,
+     "psrc": "seg/r942_720.mp4"
     },
     {
-     "src": "rsrc/r095.mp4",
+     "src": "rsrc/b1_097.mp4",
      "at": 567.5,
      "in": 0.0,
-     "dur": 2.5,
+     "dur": 0.833,
+     "psrc": "seg/b1_097_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
-     "in_original": 84.4
+     "in_original": 84.333
     },
     {
-     "src": "rsrc/r096.mp4",
-     "at": 570.0,
+     "src": "rsrc/b1_098.mp4",
+     "at": 568.333,
      "in": 0.0,
-     "dur": 2.0,
+     "dur": 22.833,
+     "psrc": "seg/b1_098_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
-     "in_original": 87.9
+     "in_original": 85.333
     },
     {
-     "src": "rsrc/r097.mp4",
-     "at": 572.0,
+     "src": "rsrc/b1_099.mp4",
+     "at": 591.167,
      "in": 0.0,
-     "dur": 3.8,
+     "dur": 8.666,
+     "psrc": "seg/b1_099_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
-     "in_original": 89.0
-    },
-    {
-     "src": "rsrc/r098.mp4",
-     "at": 575.8,
-     "in": 0.0,
-     "dur": 0.6,
-     "src_original": "dia2/IMG_8497.MOV",
-     "in_original": 92.2
-    },
-    {
-     "src": "rsrc/r099.mp4",
-     "at": 576.4,
-     "in": 0.0,
-     "dur": 7.6,
-     "src_original": "dia2/IMG_8497.MOV",
-     "in_original": 93.8
-    },
-    {
-     "src": "rsrc/r100.mp4",
-     "at": 584.0,
-     "in": 0.0,
-     "dur": 8.2,
-     "src_original": "dia2/IMG_8497.MOV",
-     "in_original": 104.7
-    },
-    {
-     "src": "rsrc/r101.mp4",
-     "at": 592.2,
-     "in": 0.0,
-     "dur": 7.633,
-     "src_original": "dia2/IMG_8497.MOV",
-     "in_original": 112.7
+     "in_original": 111.667
     },
     {
      "src": "rsrc/b1_100.mp4",
      "at": 599.833,
      "in": 0.0,
      "dur": 20.834,
-     "psrc": "seg/b1_104.mp4",
+     "psrc": "seg/b1_100_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 120.333
     },
@@ -1236,7 +1258,7 @@
      "at": 620.667,
      "in": 0.0,
      "dur": 0.5,
-     "psrc": "seg/b1_105.mp4",
+     "psrc": "seg/b1_101_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 141.167
     },
@@ -1245,7 +1267,7 @@
      "at": 621.167,
      "in": 0.0,
      "dur": 12.5,
-     "psrc": "seg/b1_106.mp4",
+     "psrc": "seg/b1_102_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 141.667
     },
@@ -1254,7 +1276,7 @@
      "at": 633.667,
      "in": 0.0,
      "dur": 3.5,
-     "psrc": "seg/b1_107.mp4",
+     "psrc": "seg/b1_103_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 154.167
     },
@@ -1263,7 +1285,7 @@
      "at": 637.167,
      "in": 0.0,
      "dur": 19.333,
-     "psrc": "seg/b1_108.mp4",
+     "psrc": "seg/b1_104_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 158.0
     },
@@ -1272,7 +1294,7 @@
      "at": 656.5,
      "in": 0.0,
      "dur": 4.667,
-     "psrc": "seg/b1_109.mp4",
+     "psrc": "seg/b1_105_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 177.333
     },
@@ -1281,7 +1303,7 @@
      "at": 661.167,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_110.mp4",
+     "psrc": "seg/b1_106_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 182.0
     },
@@ -1290,7 +1312,7 @@
      "at": 663.167,
      "in": 0.0,
      "dur": 16.0,
-     "psrc": "seg/b1_111.mp4",
+     "psrc": "seg/b1_107_720.mp4",
      "src_original": "dia2/IMG_8497.MOV",
      "in_original": 184.0
     },
@@ -1299,7 +1321,7 @@
      "at": 679.167,
      "in": 0.0,
      "dur": 7.333,
-     "psrc": "seg/b1_112.mp4",
+     "psrc": "seg/b1_108_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 4.667
     },
@@ -1308,7 +1330,7 @@
      "at": 686.5,
      "in": 0.0,
      "dur": 4.667,
-     "psrc": "seg/b1_113.mp4",
+     "psrc": "seg/b1_109_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 12.833
     },
@@ -1317,7 +1339,7 @@
      "at": 691.167,
      "in": 0.0,
      "dur": 3.166,
-     "psrc": "seg/b1_114.mp4",
+     "psrc": "seg/b1_110_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 17.5
     },
@@ -1326,7 +1348,7 @@
      "at": 694.333,
      "in": 0.0,
      "dur": 3.167,
-     "psrc": "seg/b1_115.mp4",
+     "psrc": "seg/b1_111_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 20.667
     },
@@ -1335,7 +1357,7 @@
      "at": 697.5,
      "in": 0.0,
      "dur": 13.0,
-     "psrc": "seg/b1_116.mp4",
+     "psrc": "seg/b1_112_720.mp4",
      "src_original": "dia2/IMG_8507.MOV",
      "in_original": 0.5
     },
@@ -1344,7 +1366,7 @@
      "at": 710.5,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_117.mp4",
+     "psrc": "seg/b1_113_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 24.333
     },
@@ -1353,7 +1375,7 @@
      "at": 712.5,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_118.mp4",
+     "psrc": "seg/b1_114_720.mp4",
      "src_original": "dia2/IMG_8479.MOV",
      "in_original": 7.0
     },
@@ -1362,7 +1384,7 @@
      "at": 714.0,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_119.mp4",
+     "psrc": "seg/t1_115_720.mp4",
      "src_original": "trading_nitido.mp4",
      "in_original": 12.5
     },
@@ -1371,7 +1393,7 @@
      "at": 715.5,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_120.mp4",
+     "psrc": "seg/b1_116_720.mp4",
      "src_original": "dia2/IMG_8483.MOV",
      "in_original": 45.5
     },
@@ -1380,7 +1402,7 @@
      "at": 717.0,
      "in": 0.0,
      "dur": 1.25,
-     "psrc": "seg/b1_121.mp4",
+     "psrc": "seg/b1_117_720.mp4",
      "src_original": "dia2/IMG_8506.MOV",
      "in_original": 5.0
     },
@@ -1389,7 +1411,7 @@
      "at": 718.25,
      "in": 0.0,
      "dur": 2.0,
-     "psrc": "seg/b1_122.mp4",
+     "psrc": "seg/b1_118_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 32.167
     },
@@ -1398,7 +1420,7 @@
      "at": 720.25,
      "in": 0.0,
      "dur": 2.39,
-     "psrc": "seg/b1_123.mp4",
+     "psrc": "seg/b1_119_720.mp4",
      "src_original": "dia2/IMG_8479.MOV",
      "in_original": 1.5
     },
@@ -1407,7 +1429,7 @@
      "at": 722.64,
      "in": 0.0,
      "dur": 15.36,
-     "psrc": "seg/b1_124.mp4",
+     "psrc": "seg/b1_120_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 36.473
     },
@@ -1416,7 +1438,7 @@
      "at": 738.0,
      "in": 0.0,
      "dur": 3.75,
-     "psrc": "seg/b1_125.mp4",
+     "psrc": "seg/b1_121_720.mp4",
      "src_original": "dia2/IMG_8487.MOV",
      "in_original": 2.0
     },
@@ -1425,7 +1447,7 @@
      "at": 741.75,
      "in": 0.0,
      "dur": 2.5,
-     "psrc": "seg/b1_126.mp4",
+     "psrc": "seg/b1_122_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 55.667
     },
@@ -1434,7 +1456,7 @@
      "at": 744.25,
      "in": 0.0,
      "dur": 3.0,
-     "psrc": "seg/b1_127.mp4",
+     "psrc": "seg/b1_123_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 58.167
     },
@@ -1443,7 +1465,7 @@
      "at": 747.25,
      "in": 0.0,
      "dur": 1.5,
-     "psrc": "seg/b1_128.mp4",
+     "psrc": "seg/b1_124_720.mp4",
      "src_original": "dia2/IMG_8480.MOV",
      "in_original": 0.0
     },
@@ -1452,7 +1474,7 @@
      "at": 748.75,
      "in": 0.0,
      "dur": 1.75,
-     "psrc": "seg/b1_129.mp4",
+     "psrc": "seg/b1_125_720.mp4",
      "src_original": "dia2/IMG_8480.MOV",
      "in_original": 1.5
     },
@@ -1461,7 +1483,7 @@
      "at": 750.5,
      "in": 0.0,
      "dur": 3.75,
-     "psrc": "seg/b1_130.mp4",
+     "psrc": "seg/b1_126_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 64.333
     },
@@ -1470,7 +1492,7 @@
      "at": 754.25,
      "in": 0.0,
      "dur": 3.25,
-     "psrc": "seg/b1_131.mp4",
+     "psrc": "seg/b1_127_720.mp4",
      "src_original": "dia2/IMG_8483.MOV",
      "in_original": 1.5
     },
@@ -1479,7 +1501,7 @@
      "at": 757.5,
      "in": 0.0,
      "dur": 7.333,
-     "psrc": "seg/b1_132.mp4",
+     "psrc": "seg/b1_128_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 71.333
     },
@@ -1488,7 +1510,7 @@
      "at": 764.833,
      "in": 0.0,
      "dur": 5.387,
-     "psrc": "seg/b1_133.mp4",
+     "psrc": "seg/b1_129_720.mp4",
      "src_original": "dia2/IMG_8508.MOV",
      "in_original": 78.667
     }
@@ -1548,7 +1570,7 @@
   },
   {
    "tipo": "whip",
-   "at": 490.45,
+   "at": 482.75,
    "whoosh": true
   },
   {

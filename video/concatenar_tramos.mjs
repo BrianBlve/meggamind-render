@@ -137,8 +137,8 @@ async function main() {
   // PutObject simple tiene límite de 2 GiB: el master 4K (~8 GB) se sube por multipart (64 MB por parte).
   await subirMultipart(out, OUT_KEY, tam);
 
-  if (E.KEEP_TRAMOS === "1") {
-    console.log(`[concat] tramos CONSERVADOS (KEEP_TRAMOS=1; borrar tras verificar el master). ✅ MP4 4K final en R2: ${OUT_KEY}`);
+  if (E.BORRAR_TRAMOS !== "1") {
+    console.log(`[concat] tramos CONSERVADOS (default; BORRAR_TRAMOS=1 para borrar). ✅ MP4 4K final en R2: ${OUT_KEY}`);
   } else {
     // Borrar los tramos parciales: ya no sirven y liberan espacio (regla de los 10 GB de R2).
     await s3.send(new DeleteObjectsCommand({ Bucket: E.R2_BUCKET, Delete: { Objects: keys.map((k) => ({ Key: k })) } }));
