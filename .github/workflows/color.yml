@@ -42,11 +42,11 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
           python3 -m pip install --quiet numpy opencv-python-headless
-      - name: bajar segmento
-        env: { GH_TOKEN: "${{ github.token }}" }
+      - name: bajar segmento (repo privado del máster)
+        env: { GH_TOKEN: "${{ secrets.SRC_TOKEN }}" }
         run: |
           gh release download "${{ github.event.inputs.release_tag }}" \
-            -R "${{ github.repository }}" -p "${{ matrix.seg.file }}" -D video
+            -R BrianMastery/vlog-color-src -p "${{ matrix.seg.file }}" -D video
       - name: colorear
         working-directory: video
         env: { NPROC: "4", FF: "ffmpeg", FFP: "ffprobe" }
