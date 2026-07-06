@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 350
     strategy:
       fail-fast: false
-      max-parallel: 6
+      max-parallel: 20
       matrix:
         seg:
           - { file: s000.mp4, off: 0 }
@@ -49,7 +49,7 @@ jobs:
             -R BrianMastery/vlog-color-src -p "${{ matrix.seg.file }}" -D video
       - name: colorear
         working-directory: video
-        env: { NPROC: "4", FF: "ffmpeg", FFP: "ffprobe" }
+        env: { NPROC: "2", FF: "ffmpeg", FFP: "ffprobe" }
         run: |
           python3 color_driver.py "${{ matrix.seg.file }}" "${{ matrix.seg.off }}" "c_${{ matrix.seg.file }}"
       - name: subir coloreado al repo PRIVADO (no artifacts públicos)
