@@ -1,0 +1,59 @@
+name: color
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Tag del release con los segmentos"
+        default: "color-src"
+
+jobs:
+  color:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        seg:
+          - { file: s000.mp4, off: 0 }
+          - { file: s001.mp4, off: 2500 }
+          - { file: s002.mp4, off: 4880 }
+          - { file: s003.mp4, off: 7395 }
+          - { file: s004.mp4, off: 9780 }
+          - { file: s005.mp4, off: 12044 }
+          - { file: s006.mp4, off: 14600 }
+          - { file: s007.mp4, off: 16970 }
+          - { file: s008.mp4, off: 19271 }
+          - { file: s009.mp4, off: 21780 }
+          - { file: s010.mp4, off: 24000 }
+          - { file: s011.mp4, off: 26625 }
+          - { file: s012.mp4, off: 28960 }
+          - { file: s013.mp4, off: 31337 }
+          - { file: s014.mp4, off: 33750 }
+          - { file: s015.mp4, off: 36216 }
+          - { file: s016.mp4, off: 38500 }
+          - { file: s017.mp4, off: 41000 }
+          - { file: s018.mp4, off: 43291 }
+          - { file: s019.mp4, off: 45673 }
+    steps:
+      - uses: actions/checkout@v4
+      - name: deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python3 -m pip install --quiet numpy opencv-python-headless
+      - name: bajar segmento
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          gh release download "${{ github.event.inputs.release_tag }}" \
+            -R "${{ github.repository }}" -p "${{ matrix.seg.file }}" -D video
+      - name: colorear
+        working-directory: video
+        env: { NPROC: "4", FF: "ffmpeg", FFP: "ffprobe" }
+        run: |
+          python3 color_driver.py "${{ matrix.seg.file }}" "${{ matrix.seg.off }}" "c_${{ matrix.seg.file }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: "c_${{ matrix.seg.file }}"
+          path: "video/c_${{ matrix.seg.file }}"
+          retention-days: 2
