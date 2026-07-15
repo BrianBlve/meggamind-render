@@ -58,7 +58,7 @@ jobs:
         run: python3 r2_util.py down "reel/rsrc/${{ matrix.pieza.file }}" "${{ matrix.pieza.file }}"
       - name: colorear (motor V3)
         working-directory: video
-        env: { NPROC: "2", FF: "ffmpeg" }
+        env: { NPROC: "2", FF: "ffmpeg", FFP: "ffprobe" }
         run: python3 reel_color_driver.py "${{ matrix.pieza.file }}" "${{ matrix.pieza.fuente }}" "${{ matrix.pieza.frames }}" "c_${{ matrix.pieza.file }}"
       - name: subir coloreada a R2
         working-directory: video

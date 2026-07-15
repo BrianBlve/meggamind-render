@@ -9,14 +9,15 @@ Reel: visual-swap del b-roll). Verifica el frame count contra el esperado del in
 import sys, os, subprocess, math
 
 FF = os.environ.get("FF", "ffmpeg")
+FFP = os.environ.get("FFP", "ffprobe")
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 def nframes(path):
-    r = subprocess.run([FF, "-i", path, "-map", "0:v:0", "-c", "copy", "-f", "null", "-"],
+    # ffprobe count_packets (receta del vlog): `ffmpeg -c copy` en el runner NO imprime frame=
+    r = subprocess.run([FFP, "-v", "error", "-select_streams", "v:0", "-count_packets",
+                        "-show_entries", "stream=nb_read_packets", "-of", "csv=p=0", path],
                        capture_output=True, text=True)
-    import re
-    m = re.findall(r"frame=\s*(\d+)", r.stderr)
-    return int(m[-1]) if m else 0
+    return int(r.stdout.strip())
 
 def main():
     pieza, fuente, esperado, out = sys.argv[1], sys.argv[2], int(sys.argv[3]), sys.argv[4]
