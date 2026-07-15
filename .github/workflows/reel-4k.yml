@@ -1,0 +1,88 @@
+# Render 4K FINAL del Reel vertical (2160x3840) por tramos, con piezas COLOREADAS (reel/crsrc).
+# Fases: plan (frameRanges) -> render (matrix, --scale=2) -> concat (duración explícita + audio_final).
+name: reel-4k
+
+on:
+  workflow_dispatch:
+    inputs:
+      segment:
+        description: "Frames por tramo"
+        default: "1400"
+      rangos:
+        description: "Modo rescate: tramos en BASE64 (JSON [{idx,from,to},...])"
+        default: ""
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.calc.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - id: calc
+        working-directory: video
+        env:
+          SEGMENT: ${{ github.event.inputs.segment }}
+          RANGOS: ${{ github.event.inputs.rangos }}
+        run: node calc_reel.mjs
+
+  render:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        tramo: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Liberar espacio en disco
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /usr/local/share/boost /usr/share/swift
+          sudo docker image prune --all --force || true
+      - name: Instalar dependencias
+        working-directory: video
+        run: npm ci || npm install
+      - name: Asegurar el navegador de Remotion
+        working-directory: video
+        run: npx remotion browser ensure
+      - name: Renderizar tramo
+        working-directory: video
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          FROM: ${{ matrix.tramo.from }}
+          TO: ${{ matrix.tramo.to }}
+          IDX: ${{ matrix.tramo.idx }}
+        run: node render_reel_tramo.mjs
+
+  concat:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Instalar ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - name: Instalar dependencias
+        working-directory: video
+        run: npm ci || npm install
+      - name: Concatenar el MP4 4K final
+        working-directory: video
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: node concatenar_reel.mjs

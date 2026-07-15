@@ -1,0 +1,102 @@
+# Color del REEL en la nube: matrix de 63 piezas (motor V3, esc fijo por fuente,
+# pre-pass del cierre con máscara DeepLab por frame) + hook_alpha coloreado.
+# Entrada: reel/rsrc/ en R2. Salida: reel/crsrc/ + reel/fuentes/hook_alpha_color.webm.
+name: reel-color
+
+on:
+  workflow_dispatch:
+    inputs:
+      solo:
+        description: "Opcional: nombre exacto de UNA pieza a re-colorear (rescate)"
+        default: ""
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.calc.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: calc
+        env:
+          SOLO: ${{ github.event.inputs.solo }}
+        run: |
+          if [ -n "$SOLO" ]; then
+            M=$(jq -c --arg f "$SOLO" '[.[] | select(.file == $f)]' video/piezas_reel.json)
+          else
+            M=$(jq -c . video/piezas_reel.json)
+          fi
+          echo "matrix=$M" >> "$GITHUB_OUTPUT"
+          echo "$M" | jq length
+
+  color:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        pieza: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python3 -m pip install --quiet numpy opencv-python-headless boto3
+      - name: deps torch (solo cierre 7754)
+        if: matrix.pieza.fuente == 'IMG_7754'
+        run: python3 -m pip install --quiet torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      - name: bajar pieza de R2
+        working-directory: video
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: python3 r2_util.py down "reel/rsrc/${{ matrix.pieza.file }}" "${{ matrix.pieza.file }}"
+      - name: colorear (motor V3)
+        working-directory: video
+        env: { NPROC: "2", FF: "ffmpeg" }
+        run: python3 reel_color_driver.py "${{ matrix.pieza.file }}" "${{ matrix.pieza.fuente }}" "${{ matrix.pieza.frames }}" "c_${{ matrix.pieza.file }}"
+      - name: subir coloreada a R2
+        working-directory: video
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: python3 r2_util.py up "c_${{ matrix.pieza.file }}" "reel/crsrc/${{ matrix.pieza.file }}"
+
+  hook_alpha:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    if: github.event.inputs.solo == ''
+    steps:
+      - uses: actions/checkout@v4
+      - name: deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python3 -m pip install --quiet numpy opencv-python-headless boto3
+      - name: bajar hook_alpha de R2
+        working-directory: video
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: python3 r2_util.py down "reel/fuentes/hook_alpha.webm" "hook_alpha.webm"
+      - name: colorear capa alpha (esc de IMG_7747)
+        working-directory: video
+        env: { FF: "ffmpeg" }
+        run: python3 reel_color_alpha.py hook_alpha.webm hook_alpha_color.webm
+      - name: subir a R2
+        working-directory: video
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: python3 r2_util.py up hook_alpha_color.webm "reel/fuentes/hook_alpha_color.webm"

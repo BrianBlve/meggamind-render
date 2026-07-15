@@ -2,3 +2,4 @@ node_modules/
 out/
 .remotion/
 *.log
+video/__pycache__/
