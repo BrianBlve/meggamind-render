@@ -44,9 +44,10 @@ def main():
             f.write(f"file '{os.path.abspath(p)}'\n")
     subprocess.run([FF, "-hide_banner", "-loglevel", "error", "-y",
         "-f", "concat", "-safe", "0", "-i", "concat.txt", "-c", "copy", "solo_video.mp4"], check=True)
-    # audio ORIGINAL de la pieza de vuelta (mismo stream, sin recodificar)
+    # audio ORIGINAL de la pieza de vuelta (mismo stream, sin recodificar); '?' = opcional
+    # (broll_pool.mp4 no tiene pista de audio y solo se usa como visual)
     subprocess.run([FF, "-hide_banner", "-loglevel", "error", "-y",
-        "-i", "solo_video.mp4", "-i", pieza, "-map", "0:v:0", "-map", "1:a:0",
+        "-i", "solo_video.mp4", "-i", pieza, "-map", "0:v:0", "-map", "1:a:0?",
         "-c", "copy", out], check=True)
     final = nframes(out)
     if final != esperado:
