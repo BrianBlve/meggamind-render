@@ -26,7 +26,7 @@ jobs:
           SOLO: ${{ github.event.inputs.solo }}
         run: |
           if [ -n "$SOLO" ]; then
-            M=$(jq -c --arg f "$SOLO" '[.[] | select(.file == $f)]' video/piezas_reel.json)
+            M=$(jq -c --arg s "$SOLO" '($s | split(",")) as $sel | [.[] | select(.file as $f | $sel | index($f))]' video/piezas_reel.json)
           else
             M=$(jq -c . video/piezas_reel.json)
           fi

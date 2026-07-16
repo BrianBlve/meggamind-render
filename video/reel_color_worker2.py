@@ -42,6 +42,7 @@ def textura(img16, fidx):
 
 def main():
     corte, a, b, off, out = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]), sys.argv[5]
+    exp_k = float(os.environ.get("EXP_K", "1.0"))   # override por pieza (ChatGPT: 0.68 anti-quemado)
     dec = subprocess.Popen([FF, "-hide_banner", "-loglevel", "error", "-i", corte,
         "-r", str(FPS), "-fps_mode", "cfr",
         "-vf", f"zscale=w={W}:h={H}:f=spline36,zscale=tin=arib-std-b67:t=linear:npl=1000",
@@ -62,6 +63,8 @@ def main():
             g, bl, r = np.frombuffer(buf, np.float32).reshape(3, H, W)
             lin2020 = np.stack([r, g, bl], axis=-1)
             lin709 = mh.hlg_a_sdr709_lineal(lin2020)
+            if exp_k != 1.0:
+                lin709 = np.clip(lin709 * np.float32(exp_k), 0.0, 1.0)
             img16 = (np.power(np.clip(lin709, 0.0, 1.0), 1.0 / 2.4) * 65535.0 + 0.5).astype(np.uint16)
             o = textura(img16, a + done) if TEXTURA else img16
             enc.stdin.write(np.ascontiguousarray(o).tobytes())

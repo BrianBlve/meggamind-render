@@ -8,7 +8,7 @@ Uso: reel_color_driver2.py <corte.mov> <pieza.mp4> <frames_esperados> <salida.mp
 2) NPROC sub-rangos -> reel_color_worker2 -> concat frame-exacto -> count check.
 3) Audio: del corte (-ss offset/60, -t dur), receta del conform (aac 192k 48k).
 """
-import sys, os, subprocess, math
+import sys, os, subprocess, math, json
 import numpy as np
 
 FF = os.environ.get("FF", "ffmpeg")
@@ -47,11 +47,20 @@ def main():
     nproc = int(os.environ.get("NPROC", "2"))
     step = math.ceil(esperado / nproc)
     ranges = [(i * step, min((i + 1) * step, esperado)) for i in range(nproc) if i * step < esperado]
+    # override de exposicion por pieza (color_overrides.json: ChatGPT quemado -> exp_k 0.68)
+    env = dict(os.environ)
+    try:
+        ov = json.load(open(os.path.join(HERE, "color_overrides.json")))
+        if pieza in ov and "exp_k" in ov[pieza]:
+            env["EXP_K"] = str(ov[pieza]["exp_k"])
+            print(f"override exp_k={env['EXP_K']} para {pieza}", flush=True)
+    except FileNotFoundError:
+        pass
     procs, parts = [], []
     for k, (a, b) in enumerate(ranges):
         part = f"part_{k:02d}.mp4"; parts.append(part)
         p = subprocess.Popen([sys.executable, os.path.join(HERE, "reel_color_worker2.py"),
-                              corte, str(a), str(b), str(off), part])
+                              corte, str(a), str(b), str(off), part], env=env)
         procs.append(p)
     for p in procs:
         if p.wait() != 0:

@@ -598,10 +598,11 @@ function efectosCanvas(frame: number, fps: number, eventos: Evento[]) {
   for (const e of eventos) {
     const f0 = Math.round(e.at * fps);
     if (e.tipo === "glide") {
-      if (frame >= f0 - 6 && frame <= f0 + 6) {
+      if (frame >= f0 - 5 && frame <= f0 + 5) {
         const dir = f0 % 2 === 0 ? 1 : -1;
-        tx += dir * interpolate(frame, [f0 - 6, f0, f0 + 6], [0, 64, 0]);
-        blur = Math.max(blur, interpolate(frame, [f0 - 6, f0, f0 + 6], [0, 16, 0]));
+        tx += dir * interpolate(frame, [f0 - 5, f0, f0 + 5], [0, 40, 0]);
+        // blur suave (antes 16px = se leía como fallo de foco al salir del screencast)
+        blur = Math.max(blur, interpolate(frame, [f0 - 5, f0, f0 + 5], [0, 4, 0]));
       }
     } else if (e.tipo === "impacto") {
       if (frame >= f0 - 2 && frame <= f0 + 6) {
